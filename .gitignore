@@ -193,3 +193,14 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# Visual Studio C++ cache files
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+
+#bin folder
+bin/
+
+#LastIP
+LiveScanClient/lastIP.txt
