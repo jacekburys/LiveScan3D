@@ -213,6 +213,9 @@ void LiveScanClient::UpdateFrame()
 		Point3f *pCameraCoordinates = new Point3f[pCapture->nColorFrameWidth * pCapture->nColorFrameHeight];
 		pCapture->MapColorFrameToCameraSpace(pCameraCoordinates);
 
+		// TODO(imperial) : we will have to change the calibration here
+		//   we should probably just leave the existing calibration class and write our own
+		//   then as long as the interface if the same the rest of the code should work
 		bool res = calibration.Calibrate(pCapture->pColorRGBX, pCameraCoordinates, pCapture->nColorFrameWidth, pCapture->nColorFrameHeight);
 
 		delete[] pCameraCoordinates;

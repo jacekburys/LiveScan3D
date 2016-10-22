@@ -37,6 +37,13 @@ Calibration::~Calibration()
 	}
 }
 
+// INFO(imperial)
+//  RGB *pBuffer - pointer to the first elem in an array of RGB values, 
+//    there are color_frame_width * color_frame_height elems
+//  Point3f *pCameraCoordinates - array with frame_width * frame_height Point3f
+//    I think these are the 3d points corresponding to the RGB values from pBuffer
+//  cColorWidth - width of the color frame, ie the imput from the normal camera
+//  cColorHeight - height of the color frame
 bool Calibration::Calibrate(RGB *pBuffer, Point3f *pCameraCoordinates, int cColorWidth, int cColorHeight)
 {
 	MarkerInfo marker;
@@ -102,6 +109,7 @@ bool Calibration::Calibrate(RGB *pBuffer, Point3f *pCameraCoordinates, int cColo
 		}
 	}
 
+	// TODO(imperial) : undetstand the code below
 	cameraR = worldR;
 	cameraT = RotatePoint(worldT, cameraR);
 
@@ -128,6 +136,7 @@ bool Calibration::Calibrate(RGB *pBuffer, Point3f *pCameraCoordinates, int cColo
 	return true;
 }
 
+// TODO(imperial) : figure out what this function does
 void Calibration::Procrustes(MarkerInfo &marker, vector<Point3f> &markerInWorld, vector<float> &worldToMarkerT, vector<vector<float>> &worldToMarkerR)
 {
 	int nVertices = marker.points.size();

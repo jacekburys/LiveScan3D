@@ -27,6 +27,7 @@ struct MarkerPose
 	float t[3];
 };
 
+// TODO(imperial) : we could inherit from this class and override the Calibrate function
 class Calibration
 {
 public:
@@ -37,6 +38,7 @@ public:
 	vector<float> cameraT;
 	vector<vector<float>> cameraR;
 
+	// INFO(imperial) : I guess they have thought about calibration with multiple markers
 	vector<MarkerPose> markerPoses;
 
 	bool bCalibrated;
