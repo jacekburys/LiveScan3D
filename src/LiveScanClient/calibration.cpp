@@ -13,10 +13,12 @@
 //        year={2015},
 //    }
 
+#include <memory>
 #include "calibration.h"
 #include "Kinect.h"
 #include "opencv\cv.h"
 
+#include "opencv2\aruco.hpp"
 
 
 Calibration::Calibration()
@@ -26,6 +28,10 @@ Calibration::Calibration()
 	nRequiredSamples = 20;
 
 	pDetector = new MarkerDetector();
+
+	// IT WORKS
+	cv::Ptr<cv::aruco::Dictionary> dictionary =
+		cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME(cv::aruco::DICT_4X4_100));
 }
 
 Calibration::~Calibration()
