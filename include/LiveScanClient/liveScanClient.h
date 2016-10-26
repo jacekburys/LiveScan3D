@@ -18,6 +18,7 @@
 #include "ImageRenderer.h"
 #include "SocketCS.h"
 #include "calibration.h"
+#include "arucoCalibration.h"
 #include "utils.h"
 #include "KinectCapture.h"
 #include <thread>
@@ -36,7 +37,8 @@ public:
 
 	bool m_bSocketThread;
 private:
-	Calibration calibration;
+	// Calibration calibration;
+	ArucoCalibration calibration;
 
 	bool m_bCalibrate;
 	bool m_bFilter;

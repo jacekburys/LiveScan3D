@@ -30,10 +30,12 @@
     <ClInclude Include="..\include\LiveScanClient\utils.h" />
     <ClInclude Include="..\include\nanoflann.h" />
     <ClInclude Include="..\include\socketCS.h" />
+    <ClInclude Include="arucoCalibration.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\LiveScanClient\arucoCalibration.cpp" />
     <ClCompile Include="..\src\LiveScanClient\calibration.cpp" />
     <ClCompile Include="..\src\LiveScanClient\filter.cpp" />
     <ClCompile Include="..\src\LiveScanClient\iCapture.cpp" />
