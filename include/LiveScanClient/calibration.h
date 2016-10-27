@@ -47,7 +47,7 @@ public:
 	~Calibration();
 
 	bool Calibrate(RGB *pBuffer, Point3f *pCameraCoordinates, int cColorWidth, int cColorHeight);
-private:
+protected:
 	IMarker *pDetector;
 	int nSampleCounter;
 	int nRequiredSamples;

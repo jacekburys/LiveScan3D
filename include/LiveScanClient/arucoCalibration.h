@@ -15,30 +15,10 @@
 
 #include "calibration.h"
 
-class ArucoCalibration : Calibration {
+class ArucoCalibration : public Calibration {
 public:
-	vector<float> worldT;
-	vector<vector<float>> worldR;
-	int iUsedMarkerId;
-
-	vector<float> cameraT;
-	vector<vector<float>> cameraR;
-
-	vector<MarkerPose> markerPoses;
-
-	bool bCalibrated;
-
 	ArucoCalibration();
 	~ArucoCalibration();
 
 	bool Calibrate(RGB *pBuffer, Point3f *pCameraCoordinates, int cColorWidth, int cColorHeight);
-private:
-	IMarker *pDetector;
-	int nSampleCounter;
-	int nRequiredSamples;
-
-	vector<vector<Point3f>> marker3DSamples;
-
-	void Procrustes(MarkerInfo &marker, vector<Point3f> &markerInWorld, vector<float> &markerT, vector<vector<float>> &markerR);
-	bool GetMarkerCorners3D(vector<Point3f> &marker3D, MarkerInfo &marker, Point3f *pCameraCoordinates, int cColorWidth, int cColorHeight);
 };
